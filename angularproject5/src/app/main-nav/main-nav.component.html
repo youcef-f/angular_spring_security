@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async )"  >
+
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+
+    <mat-nav-list >
+      <a mat-list-item  routerLink="/dashboard">dashboard movies</a>
+      <a mat-list-item routerLink="/movies">Movies</a>
+      <a mat-list-item routerLink="/myform">my form</a>
+      <a mat-list-item routerLink="/dialog">dialog</a>
+      <a mat-list-item routerLink="/snackbar">snackbar</a>
+      <a mat-list-item routerLink="/tooltip">tooltip</a>
+      <a mat-list-item routerLink="/datatable">datatable</a>
+      <a mat-list-item routerLink="/button">button</a>
+      <a mat-list-item routerLink="/dashboardangularmaterial">dashboard angular Material</a>
+      <a mat-list-item routerLink="/tasks">tasks vers spring server</a>
+      <a mat-list-item routerLink="/grid">grid</a>
+      <a mat-list-item routerLink="/expansion">expansion</a>
+      <a mat-list-item routerLink="/badge">badge</a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="fixed-toobar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      
+
+   
+      <span>angularproject</span>
+      <span class="fill-space"></span>
+      <span>
+        <a routerLink="/login" *ngIf="!auth.isLoggednIn()" >login</a>
+      </span>
+      <span>
+        <a href="#"   *ngIf="auth.isLoggednIn()" (click)="auth.logout()" >logout</a>
+      </span>
+    </mat-toolbar>
+
+
+    <!-- start Content Here -->
+    <ng-content>
+
+    </ng-content>
+    <!-- end  Content Here -->
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

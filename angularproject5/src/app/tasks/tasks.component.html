@@ -1,0 +1,24 @@
+<div class="container">
+
+  <p></p>
+  <button class="btn btn-danger" (click)="onNewTask()" *ngIf="authenticationService.isAdmin()"> New Task</button>
+  <p></p>
+
+
+ <div > {{authenticationService.adminshow}} </div>
+
+
+  <table class="table table-striped">
+
+    <tr>
+      <th>ID</th>
+      <th>Task name</th>
+    </tr>
+
+    <tr *ngFor="let t of tasks">
+      <td>{{t.id}}</td>
+      <td>{{t.taskName}}</td>
+    </tr>
+
+  </table>
+</div>

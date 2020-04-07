@@ -1,0 +1,24 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+/* important pour le content ne remonte sur le navbar du haut lors du scroll */
+.fixed-toobar {
+  position: fixed;
+  z-index: 2;
+}
+
+.fill-space {
+  /* This fills the remaining space, by using flexbox.
+   Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
